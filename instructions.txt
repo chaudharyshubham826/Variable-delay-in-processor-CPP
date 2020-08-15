@@ -1,0 +1,18 @@
+lw $t4, 5($t0)
+lw $t5, 7($t1)
+sub $t4, $t4, $t5
+add	$t3, $t3, $t5
+add	$t2, $t2, 1
+lw $t6, 7($t2)
+add	$t0, $t0, 4
+lw $t7, 5($t2)
+add $t4, $t0, $t1
+add $t6, $t2, $t0
+add $t4, $t0, $t4
+lw $t1, 6($t1)
+add $t7, $t6, $t7
+sw $ra, 0($t7)
+lw $ra, 0($t7)
+sub $t7, $t7, $t6
+add $t4, $t0, $t4
+lw $t5, 7($t1)

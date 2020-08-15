@@ -1,0 +1,118 @@
+add $t4, $t0, $t1
+add $t6, $t2, $t0
+jal 4
+j 15
+add $t4, $t0, $t4
+add $sp, $t6, $sp
+sw $ra, 0($sp)
+jal 12
+lw $ra, 0($sp)
+sub $sp, $sp, $t6
+jr $ra
+add $t4, $t0, $t4
+jr $ra
+
+
+
+add $t4, $t0, $t1   //for data hazard 2
+add $t6, $t2, $t0
+add $t4, $t0, $t4
+
+add $t4, $t0, $t1 //for data hazard 1
+add $t4, $t0, $t4
+add $t6, $t2, $t0
+
+lw $t4, 20($t0)  ///lw data hazard
+add $t4, $t0, $t4
+add $t6, $t2, $t0
+
+add $t4, $t0, $t1
+j 4
+sub $t1, $t2, $t5
+sll $t1, $t1, 2
+srl $t1, $t1, 2
+
+
+add $t4, $t0, $t1
+add $t6, $t2, $t0
+jal 4
+j 15
+add $t4, $t0, $t4
+add $t7, $t6, $t7
+sw $ra, 0($v0)
+jal 8
+lw $ra, 0($v0)
+sub $sp, $sp, $t6
+
+
+add $t1, $t2, $t3
+add $t2, $t2, $t3
+lw $t0, 2($zero)
+add $t2, $t0, $t3
+
+add $t4, $t0, $t1
+j 4
+sub $t1, $t2, $t5
+sll $t1, $t1, 2
+srl $t1, $t1, 2
+
+add $t4, $t1, $t0
+sub $t5, $t1, $t2
+sll $t6, $t1, 2
+srl $t7, $t1, 2
+
+sw $t1, 1000($t2)
+sw $t2, 1000($t1)
+lw $t3, 1000($t2)
+
+add $t4, $t0, $t1
+bgtz $t4, 3
+blez $t4, 4
+bne $t4, $t1, 6
+sub $t5, $t1, $t2
+sll $t6, $t1, 2
+srl $t7, $t1, 2
+
+add $t4, $t0, $t1
+add $t6, $t2, $t0 
+jal 4
+j 15
+add $t4, $t0, $t4
+add $sp, $t6, $sp
+sw $ra, 0($sp)
+jal 12
+lw $ra, 0($sp)
+sub $sp, $sp, $t6
+jr $ra
+add $t4, $t0, $t4
+jr $ra
+
+add $t4, $t0, $t1
+add $t6, $t2, $t0 
+add $t4, $t0, $t4
+add $t7, $t6, $t7
+sw $ra, 0($t7)
+jal 9
+lw $ra, 0($t7)
+sub $t7, $t7, $t6
+jr $ra
+add $t4, $t0, $t4
+
+lw $t4, 5($t0)
+lw $t5, 7($t1)
+sub $t4, $t4, $t5
+add	$t3, $t3, $t5
+add	$t2, $t2, 1
+lw $t6, 7($t2)
+add	$t0, $t0, 4
+lw $t7, 5($t2)
+add $t4, $t0, $t1
+add $t6, $t2, $t0
+add $t4, $t0, $t4
+lw $t1, 6($t1)
+add $t7, $t6, $t7
+sw $ra, 0($t7)
+lw $ra, 0($t7)
+sub $t7, $t7, $t6
+add $t4, $t0, $t4
+lw $t5, 7($t1)
